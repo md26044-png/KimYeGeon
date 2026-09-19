@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>김예건 - 소개 페이지</title>
+<style>
+  :root {
+    --madrid-white: #ffffff;
+    --madrid-gold: #d4af37;
+    --madrid-navy: #1a2340;
+    --madrid-purple: #4b2e83;
+    --bg-soft: #f5f6fa;
+    --text-dark: #1a1a2e;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* Hero */
+  header.hero {
+    background: linear-gradient(135deg, var(--madrid-navy), var(--madrid-purple));
+    color: var(--madrid-white);
+    text-align: center;
+    padding: 80px 20px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: var(--bg-soft);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--madrid-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    font-weight: bold;
+    color: var(--madrid-navy);
+    margin: 0 auto 24px;
+    border: 4px solid var(--madrid-white);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  }
+
+  header.hero h1 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+  }
+
+  header.hero p.subtitle {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: var(--madrid-gold);
+    font-weight: 600;
+  }
+
+  .note {
+    font-size: 0.75rem;
+    color: #ffcccc;
+    margin-top: 8px;
+  }
+
+  main {
+    max-width: 900px;
+    margin: -40px auto 0;
+    padding: 0 20px 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .card {
+    background: var(--madrid-white);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border-left: 6px solid var(--madrid-gold);
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    color: var(--madrid-navy);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .info-item {
+    background: var(--bg-soft);
+    border-radius: 10px;
+    padding: 16px 20px;
+  }
+
+  .info-item .label {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 4px;
+  }
+
+  .info-item .value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--madrid-navy);
+  }
+
+  .mbti-box {
+    display: inline-block;
+    background: var(--madrid-navy);
+    color: var(--madrid-gold);
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+  }
+
+  .mbti-desc {
+    margin-top: 14px;
+    color: #555;
+  }
+
+  .team-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .team-crest {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: var(--madrid-white);
+    border: 3px solid var(--madrid-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--madrid-navy);
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .team-crest img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+  }
+
+  .logo-inline {
+    height: 28px;
+    width: 28px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  .dream-box .logo-inline {
+    height: 40px;
+    width: 40px;
+  }
+
+  .highlight-flag {
+    display: inline-block;
+    background: #fff3cd;
+    color: #856404;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 6px;
+    margin-left: 6px;
+    font-weight: 600;
+  }
+
+  .dream-box {
+    background: linear-gradient(120deg, #eef1ff, #f9f6ff);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+  }
+
+  .dream-box .big-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .dream-box .dream-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--madrid-purple);
+  }
+
+  footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #999;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 600px) {
+    header.hero h1 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="avatar">예건</div>
+  <h1>김예건</h1>
+  <p class="subtitle">미래의 빅데이터 관리자를 꿈꾸는 고등학생</p>
+  <p class="note">※ 프로필 사진 미등록 — 이니셜로 표시 [확인 필요]</p>
+</header>
+
+<main>
+
+  <section class="card">
+    <h2>👤 기본 정보</h2>
+    <div class="grid-2">
+      <div class="info-item">
+        <div class="label">이름</div>
+        <div class="value">김예건</div>
+      </div>
+      <div class="info-item">
+        <div class="label">학년 / 반</div>
+        <div class="value">고등학교 1학년 4반</div>
+      </div>
+      <div class="info-item">
+        <div class="label">학교명</div>
+        <div class="value"><img class="logo-inline" src="file:///C:/Users/USER/AppData/Local/Temp/claude/C--Users-USER-Desktop/2d0423cb-eb70-4fc2-b2b5-70f139796e52/images/1.png" alt="명덕고등학교 앰블럼">명덕고등학교</div>
+      </div>
+      <div class="info-item">
+        <div class="label">MBTI</div>
+        <div class="value">ISTJ</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🎯 꿈 · 진로</h2>
+    <div class="dream-box">
+      <div class="big-icon">📊</div>
+      <div class="dream-title">빅데이터 관리자</div>
+      <p style="margin-top:10px; color:#555;">
+        대학교에서 빅데이터 관련 학과에 진학하여 전문성을 쌓고,<br>
+        방대한 데이터를 다루고 관리하는 <strong>빅데이터 관리자</strong>가 되는 것이 목표입니다.
+      </p>
+      <p style="margin-top:14px; font-weight:600; color:var(--madrid-navy);">
+        <img class="logo-inline" src="file:///C:/Users/USER/AppData/Local/Temp/claude/C--Users-USER-Desktop/2d0423cb-eb70-4fc2-b2b5-70f139796e52/images/2.jpg" alt="성균관대학교 앰블럼" style="border-radius:50%;">
+        희망 진학: 성균관대학교 빅데이터학과
+      </p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🧠 성격 (MBTI)</h2>
+    <span class="mbti-box">ISTJ</span>
+    <p class="mbti-desc">
+      청렴결백한 논리주의자 유형으로, 사실에 기반해 신중하게 판단하고
+      맡은 일을 꾸준하고 책임감 있게 해내는 성향으로 알려져 있습니다.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>⚽ 취미 &amp; 좋아하는 팀</h2>
+    <div class="team-section">
+      <div class="team-crest"><img src="file:///C:/Users/USER/AppData/Local/Temp/claude/C--Users-USER-Desktop/2d0423cb-eb70-4fc2-b2b5-70f139796e52/images/3.jpg" alt="레알 마드리드 앰블럼"></div>
+      <div>
+        <p><strong>취미:</strong> 해외축구 시청 (유럽 축구 리그 관람)</p>
+        <p style="margin-top:6px;">
+          <strong>최애 구단:</strong> 레알 마드리드 (Real Madrid CF)
+          <span class="highlight-flag">스페인 라리가</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 김예건의 소개 페이지 · Made with HTML &amp; CSS
+</footer>
+
+</body>
+</html>
